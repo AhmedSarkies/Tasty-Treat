@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 const Helmet = ({ title, children }) => {
-  document.title = `Food ordering app - ${title}`;
+  document.title = `Tasty Treat App - ${title}`;
 
   return <Fragment>{children}</Fragment>;
 };
