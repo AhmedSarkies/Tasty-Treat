@@ -1,0 +1,170 @@
+.hero__title {
+  font-size: 2.5rem;
+  line-height: 55px;
+}
+.hero__title span,
+.all__foods-btn a,
+.feature__subtitle,
+.feature__title span,
+.tasty__treat__title span,
+.testimonial__subtitle,
+.testimonial__title span {
+  color: #df2020;
+}
+.hero__content {
+  margin-top: 70px;
+}
+.hero__content p {
+  font-size: 1rem;
+  line-height: 30px;
+  color: #777;
+}
+.hero__btns button {
+  border: none;
+  outline: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.order__btn {
+  background-color: #df2020;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.order__btn:hover {
+  background-color: #212245;
+}
+.all__foods-btn {
+  background-color: transparent;
+  border: 1px solid #df2020 !important;
+}
+.hero__service p {
+  color: #212245;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.shipping__icon i {
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #df2020;
+  color: #fff;
+  font-weight: 600;
+}
+.feature__text,
+.feature__item p,
+.choose__us__desc {
+  color: #777;
+}
+.food__category {
+  background-color: #df2020;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px 0;
+  border-radius: 8px;
+}
+.food__category button {
+  background-color: transparent;
+  color: #fff;
+  padding: 7px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.food__category button img {
+  width: 20px;
+  height: 20px;
+}
+.foodBtnActive {
+  background-color: #fff !important;
+  color: #df2020 !important;
+  border-radius: 5px;
+}
+.tasty__treat__text,
+.testimonial__desc {
+  color: #777;
+  line-height: 30px;
+}
+.choose__us__title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.choose__us__title i {
+  font-weight: 500 !important;
+  color: #df2020;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero__content h5 {
+    font-size: 1rem;
+  }
+  .hero__content p {
+    font-size: 0.8rem;
+    line-height: 25px;
+  }
+  .hero__title {
+    font-size: 1.5rem;
+    line-height: 35px;
+  }
+  .hero__btns button {
+    padding: 5px 15px;
+    font-size: 0.7rem;
+  }
+  .hero__service p {
+    font-size: 0.7rem !important;
+  }
+  .feature__item h5 {
+    font-size: 0.9rem;
+  }
+  .feature__item p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .feature__subtitle {
+    font-size: 1rem;
+  }
+  .testimonial__desc,
+  .feature__text {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .food__category {
+    padding: 15px;
+  }
+  .food__category button {
+    padding: 5px 15px;
+    font-size: 0.7rem;
+  }
+  .choose__us__title,
+  .testimonial__desc {
+    font-size: 0.8rem;
+  }
+  .choose__us__desc {
+    font-size: 0.7rem;
+  }
+  .testimonial__subtitle {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 567px) {
+  .hero__content {
+    text-align: center;
+  }
+  .hero__btns,
+  .hero__service {
+    justify-content: center;
+  }
+  .food__category {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .category__btn {
+    display: flex !important;
+    margin-left: 1.75rem !important;
+  }
+  .why__choose__us {
+    padding-top: 0 !important;
+  }
+}
