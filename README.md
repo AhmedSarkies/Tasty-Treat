@@ -19,9 +19,12 @@
 ---
 
 1. React.js
-2. Redux Toolkit
-3. ReactStrap
-4. CSS
+2. React-Router-Dom
+3. Redux
+4. ReactStrap
+5. CSS
+6. RemixIcons
+7. Firebase
 
 ### How to start?
 
