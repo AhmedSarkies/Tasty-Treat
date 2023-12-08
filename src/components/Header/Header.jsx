@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 
 import { NavLink, Link } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import { Container } from "reactstrap";
 
 import logo from "../../assets/images/res-logo.png";
@@ -30,7 +32,13 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+
+  const openCart = () => {
+    document.querySelector(".cart__container").classList.toggle("open");
+  };
 
   const stickyHeaderFunc = () => {
     window.addEventListener("scroll", () => {
@@ -79,9 +87,15 @@ const Header = () => {
           </div>
           {/* =========Nav Right Icons========== */}
           <div className="nav__right d-flex align-items-center gap-4">
-            <span className="cart__icon">
+            <span className="cart__icon" onClick={openCart}>
               <i className="ri-shopping-basket-line"></i>
-              <span className="cart__badge">0</span>
+              <span className="cart__badge">
+                {
+                  cartItems?.cart?.length > 0
+                    ? cartItems?.cart?.length
+                    : totalQuantity
+                }
+              </span>
             </span>
             <span className="user">
               <Link to="/login">
