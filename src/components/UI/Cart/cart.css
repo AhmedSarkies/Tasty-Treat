@@ -107,3 +107,9 @@
   background-color: #212245;
   color: #fff;
 }
+
+@media screen and (max-width: 567px) {
+  .cart__container .cart {
+    width: 100%;
+  }
+}
