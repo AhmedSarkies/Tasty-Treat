@@ -39,3 +39,9 @@
   color: #df2020;
   cursor: pointer;
 }
+
+@media screen and (max-width: 567px) {
+  .cart__product-title {
+    font-size: 0.75rem;
+  }
+}
