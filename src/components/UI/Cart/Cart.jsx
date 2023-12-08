@@ -60,7 +60,13 @@ const Cart = () => {
             Subtotal:{" "}
             <span>${cartItems?.totalAmount || cart?.totalAmount}</span>
           </h6>
-          <button className="checkout" onClick={() => navigate("/checkout")}>
+          <button
+            className="checkout"
+            onClick={() => {
+              navigate("/checkout");
+              closeCart();
+            }}
+          >
             <Link to="/checkout">Checkout</Link>
           </button>
         </div>
