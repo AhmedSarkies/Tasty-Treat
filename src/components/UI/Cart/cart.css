@@ -1,0 +1,109 @@
+.cart__container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 9999999999;
+  transition: all 0.5s ease-in-out;
+}
+.cart__container.open {
+  right: 0;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.cart__container .cart__overlay {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+.cart__container.open .cart__overlay {
+  display: block;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+.cart__container .cart {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 400px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 5px 0 0 5px;
+  transition: all 0.5s ease-in-out;
+}
+.cart__container .cart {
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+.cart__container .cart .cart__close {
+  padding: 10px 20px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__container .cart .cart__close .cart__close-close i {
+  font-size: 1.1rem;
+  background-color: #212245;
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.cart__container .cart .cart__close .cart__close-clear i {
+  font-size: 1.2rem;
+  color: #df2020;
+  cursor: pointer;
+}
+.cart__container .cart .cart__item-list::-webkit-scrollbar {
+  display: none;
+}
+.cart__container .cart .cart__item-list {
+  height: calc(100vh - 140px);
+  padding-top: 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+.cart__container .cart .cart__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 5px 20px;
+  background-color: #df2020;
+}
+.cart__container .cart .cart__bottom h6 {
+  color: #fff;
+  font-size: 1rem;
+}
+.cart__container .cart .cart__bottom h6 span {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.cart__container .cart .cart__bottom button {
+  background-color: #fff;
+  color: #212245;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 4px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cart__container .cart .cart__bottom button:hover {
+  background-color: #212245;
+  color: #fff;
+}
