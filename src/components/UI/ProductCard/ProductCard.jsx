@@ -17,7 +17,6 @@ const ProductCard = ({ product }) => {
       addToCart({
         ...product,
         quantity: 1,
-        totalPrice: price,
       })
     );
   };
