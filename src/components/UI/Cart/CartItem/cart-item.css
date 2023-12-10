@@ -35,13 +35,13 @@
   font-weight: 600;
 }
 .delete__btn i {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #df2020;
   cursor: pointer;
 }
 
-@media screen and (max-width: 567px) {
+/* @media screen and (max-width: 567px) {
   .cart__product-title {
     font-size: 0.75rem;
   }
-}
+} */
