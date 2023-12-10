@@ -52,7 +52,7 @@ const Cart = () => {
               <CartItem key={cartItem.id} cartItem={cartItem} />
             ))
           ) : (
-            <h6 className="text-center">No items in cart</h6>
+            <h6 className="text-center mt-5">No items in cart</h6>
           )}
         </div>
         <div className="cart__bottom d-flex justify-content-between align-items-center">
