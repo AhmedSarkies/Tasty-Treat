@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 
 import Routers from "../../routes/Routers";
 
@@ -11,9 +11,7 @@ import { Header, Footer, Cart } from "../";
 const Layout = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(loadCartItems());
-  }, [dispatch]);
+  dispatch(loadCartItems());
 
   return (
     <Fragment>
