@@ -55,14 +55,7 @@ const Home = () => {
   const [hotPizza, setHotPizza] = useState([]);
 
   useEffect(() => {
-    const filteredPizzaProducts = products.filter(
-      (product) => product.category === "Pizza"
-    );
-    const hotPizzaProducts = filteredPizzaProducts.slice(0, 4);
-    setHotPizza(hotPizzaProducts);
-  }, []);
-
-  useEffect(() => {
+    // Filter products
     if (category === "All") {
       setAllProducts(products);
     }
@@ -84,6 +77,12 @@ const Home = () => {
       );
       setAllProducts(beardProducts);
     }
+    // Filter hot pizza
+    const filteredPizzaProducts = products.filter(
+      (product) => product.category === "Pizza"
+    );
+    const hotPizzaProducts = filteredPizzaProducts.slice(0, 4);
+    setHotPizza(hotPizzaProducts);
   }, [category]);
 
   return (
