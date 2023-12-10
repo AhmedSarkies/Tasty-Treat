@@ -7,12 +7,13 @@ const initialState = {
   totalQuantity: 0,
 };
 
-// Total Amount Handler
-const totalAmountHandler = (state) => {
+// Total Amount & Local Storage Handler
+const totalAmountLocalStorageHandler = (state) => {
   state.totalAmount = state.cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+  localStorage.setItem("cartItems", JSON.stringify(state));
 };
 
 // Cart Slice
@@ -39,8 +40,7 @@ const cartSlice = createSlice({
       } else {
         existingItem.quantity += newItem.quantity;
       }
-      totalAmountHandler(state);
-      localStorage.setItem("cartItems", JSON.stringify(state));
+      totalAmountLocalStorageHandler(state);
     },
     // Delete From Cart Reducer
     deleteFromCart: (state, action) => {
@@ -52,20 +52,18 @@ const cartSlice = createSlice({
       } else {
         existingItem.quantity--;
       }
-      totalAmountHandler(state);
-      localStorage.setItem("cartItems", JSON.stringify(state));
+      totalAmountLocalStorageHandler(state);
     },
     // Delete Item From Cart Reducer
     removeItemFromCart: (state, action) => {
       const id = action.payload;
       state.cart = state.cart.filter((item) => item.id !== id);
       state.totalQuantity--;
-      totalAmountHandler(state);
-      localStorage.setItem("cartItems", JSON.stringify(state));
+      totalAmountLocalStorageHandler(state);
     },
     // Delete Cart Reducer
     clearCart: () => {
-      localStorage.setItem("cartItems", JSON.stringify(initialState));
+      localStorage.removeItem("cartItems");
       return initialState;
     },
   },
