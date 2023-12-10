@@ -11,7 +11,9 @@ import { Header, Footer, Cart } from "../";
 const Layout = () => {
   const dispatch = useDispatch();
 
-  dispatch(loadCartItems());
+  if (localStorage.getItem("cartItems")) {
+    dispatch(loadCartItems());
+  }
 
   return (
     <Fragment>
