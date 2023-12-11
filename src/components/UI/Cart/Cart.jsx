@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -67,7 +67,7 @@ const Cart = () => {
               closeCart();
             }}
           >
-            <Link to="/checkout">Checkout</Link>
+            Checkout
           </button>
         </div>
       </ListGroup>
