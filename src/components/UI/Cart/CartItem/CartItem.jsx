@@ -42,15 +42,15 @@ const CartItem = ({ cartItem }) => {
               {quantity}x <span>${price * quantity}</span>
             </p>
             <div className="increase__decrease-btn d-flex align-items-center justify-content-between">
-              <span className="increase__btn" onClick={addToCartHandler}>
-                <i className="ri-add-line"></i>
-              </span>
-              <span className="quantity">{quantity}</span>
               <span
                 className="decrease__btn"
                 onClick={() => deleteFromCartHandler(id)}
               >
                 <i className="ri-subtract-line"></i>
+              </span>
+              <span className="quantity">{quantity}</span>
+              <span className="increase__btn" onClick={addToCartHandler}>
+                <i className="ri-add-line"></i>
               </span>
             </div>
           </div>
