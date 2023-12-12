@@ -28,6 +28,7 @@
 }
 .increase__btn,
 .decrease__btn {
+  color: #212245;
   cursor: pointer;
 }
 .decrease__btn {
