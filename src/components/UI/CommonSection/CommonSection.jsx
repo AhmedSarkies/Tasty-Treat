@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import './common-section.css'
+import { Container } from "reactstrap";
 
-const CommonSection = () => {
+import "./common-section.css";
+
+const CommonSection = ({ title }) => {
   return (
-    <div>CommonSection</div>
-  )
-}
+    <section className="common__section">
+      <Container>
+        <h2 className="text-white">{title}</h2>
+      </Container>
+    </section>
+  );
+};
 
-export default CommonSection
+export default CommonSection;
