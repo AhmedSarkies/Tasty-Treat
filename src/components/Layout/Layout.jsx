@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
-import Routers from "../../routes/Routers";
-
 import { useDispatch } from "react-redux";
+
+import Routers from "../../routes/Routers";
 
 import { loadCartItems } from "../../store/slices/cartSlice";
 
