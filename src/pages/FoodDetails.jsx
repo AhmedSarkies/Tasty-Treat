@@ -43,7 +43,6 @@ const FoodDetails = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     setPreviewImg(image01);
     setActivePreviewImg(1);
   }, [product, image01]);
