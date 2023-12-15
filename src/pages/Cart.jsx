@@ -9,6 +9,7 @@ import { removeItemFromCart } from "../store/slices/cartSlice";
 import { CommonSection, Helmet } from "../components";
 
 import "../styles/cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -26,7 +27,9 @@ const Cart = () => {
           <Row>
             {cart.length === 0 && (
               <Col lg="12" className="cart__empty">
-                <p className="text-center">Your cart is empty</p>
+                <p className="text-center">
+                  No items in cart. <Link to="/foods">Foods</Link>
+                </p>
               </Col>
             )}
             {cart.length !== 0 && (
@@ -73,16 +76,16 @@ const Tr = ({ item, deleteItem }) => {
           }}
         />
       </td>
-      <td>{title}</td>
-      <td>${price}</td>
-      <td>{quantity}</td>
       <td>
-        <button
-          className="addToCart__btn delete__item-btn"
+        <Link to={`/foods/${id}`}>{title}</Link>
+      </td>
+      <td>${price}</td>
+      <td>{quantity}px</td>
+      <td>
+        <i
+          className="ri-delete-bin-line addToCart__btn delete__item-btn"
           onClick={() => deleteItem(id)}
-        >
-          <i className="ri-delete-bin-line"></i>
-        </button>
+        ></i>
       </td>
     </tr>
   );
