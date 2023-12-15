@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link, useNavigate } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 
 import { Col, Container, Row } from "reactstrap";
@@ -9,11 +11,11 @@ import { removeItemFromCart } from "../store/slices/cartSlice";
 import { CommonSection, Helmet } from "../components";
 
 import "../styles/cart.css";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.cart);
+  const { cart, totalAmount } = useSelector((state) => state.cart);
 
   const deleteItem = (id) => {
     dispatch(removeItemFromCart(id));
@@ -50,6 +52,31 @@ const Cart = () => {
                     ))}
                   </tbody>
                 </table>
+              </Col>
+            )}
+            {cart.length !== 0 && (
+              <Col lg="12">
+                <div className="cart__page-checkout mt-4">
+                  <h6>
+                    Subtotal:{" "}
+                    <span className="cart__subtotal">${totalAmount}</span>
+                  </h6>
+                  <p>Taxes and shipping calculated at checkout</p>
+                  <div className="cart__page-btn">
+                    <button
+                      onClick={() => navigate("/foods")}
+                      className="addToCart__btn me-3"
+                    >
+                      Continue Shopping
+                    </button>
+                    <button
+                      onClick={() => navigate("/checkout")}
+                      className="addToCart__btn"
+                    >
+                      Proceed to checkout
+                    </button>
+                  </div>
+                </div>
               </Col>
             )}
           </Row>
