@@ -27,6 +27,19 @@
 .addToCart__btn.delete__item-btn:hover {
   background-color: #ff0000;
 }
+.cart__page-checkout {
+  color: #212245;
+}
+.cart__page-checkout .cart__subtotal {
+  font-size: 1.5rem;
+  color: #df2020;
+}
+.cart__page-checkout .cart__page-btn button {
+  transition: all 0.3s ease-in-out;
+}
+.cart__page-checkout .cart__page-btn button:hover {
+  background-color: #ff0000;
+}
 @media only screen and (max-width: 576px) {
   .cart__table {
     resize: both !important;
@@ -34,5 +47,10 @@
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
     overflow-x: scroll !important;
+    width: 100% !important;
+    min-width: 300px !important;
+  }
+  .cart__page-checkout .cart__page-btn button {
+    padding: 7px !important;
   }
 }
