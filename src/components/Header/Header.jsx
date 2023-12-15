@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -34,6 +34,8 @@ const Header = () => {
   const menuRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
 
   const openCart = () => {
@@ -53,12 +55,23 @@ const Header = () => {
     });
   };
 
+  const handleResize = () => {
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth);
+    });
+  };
+
   useEffect(() => {
     stickyHeaderFunc();
+    handleResize();
+    if (windowWidth > 991) {
+      menuRef.current.classList.remove("show__menu");
+    }
     return () => {
       window.removeEventListener("scroll", stickyHeaderFunc);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [windowWidth]);
 
   return (
     <header className="header" ref={headerRef}>
@@ -90,11 +103,9 @@ const Header = () => {
             <span className="cart__icon" onClick={openCart}>
               <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">
-                {
-                  cartItems?.cart?.length > 0
-                    ? cartItems?.cart?.length
-                    : totalQuantity
-                }
+                {cartItems?.cart?.length > 0
+                  ? cartItems?.cart?.length
+                  : totalQuantity}
               </span>
             </span>
             <span className="user">
