@@ -31,9 +31,9 @@ const Cart = () => {
             )}
             {cart.length !== 0 && (
               <Col lg="12" className="cart__table">
-                <table className="table w-100">
+                <table className="table table-bordered text-center w-100">
                   <thead>
-                    <tr>
+                    <tr className="align-middle">
                       <th>Image</th>
                       <th>Product Title</th>
                       <th>Price</th>
@@ -43,30 +43,7 @@ const Cart = () => {
                   </thead>
                   <tbody>
                     {cart.map((item) => (
-                      <tr key={item.id}>
-                        <td>
-                          <img
-                            src={item.image01}
-                            alt={item.title}
-                            style={{
-                              width: "50px",
-                              height: "50px",
-                              objectFit: "cover",
-                            }}
-                          />
-                        </td>
-                        <td>{item.title}</td>
-                        <td>${item.price}</td>
-                        <td>{item.quantity}</td>
-                        <td>
-                          <button
-                            className="btn btn-danger"
-                            onClick={() => deleteItem(item.id)}
-                          >
-                            Remove
-                          </button>
-                        </td>
-                      </tr>
+                      <Tr key={item.id} item={item} deleteItem={deleteItem} />
                     ))}
                   </tbody>
                 </table>
@@ -76,6 +53,38 @@ const Cart = () => {
         </Container>
       </section>
     </Helmet>
+  );
+};
+
+// Tr component for table row in cart page
+const Tr = ({ item, deleteItem }) => {
+  const { id, title, price, quantity, image01 } = item;
+
+  return (
+    <tr className="align-middle" key={id}>
+      <td>
+        <img
+          src={image01}
+          alt={title}
+          style={{
+            width: "50px",
+            height: "50px",
+            objectFit: "cover",
+          }}
+        />
+      </td>
+      <td>{title}</td>
+      <td>${price}</td>
+      <td>{quantity}</td>
+      <td>
+        <button
+          className="addToCart__btn delete__item-btn"
+          onClick={() => deleteItem(id)}
+        >
+          <i className="ri-delete-bin-line"></i>
+        </button>
+      </td>
+    </tr>
   );
 };
 
