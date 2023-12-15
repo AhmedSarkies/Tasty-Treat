@@ -1,6 +1,31 @@
+.cart__table th,
+.cart__table td,
+.cart__empty {
+  color: #212245 !important;
+  font-weight: 600 !important;
+}
+.cart__empty {
+  font-size: 1.3rem !important;
+}
+.cart__empty a {
+  color: #df2020 !important;
+  text-decoration: underline !important;
+}
+.cart__table th {
+  font-size: 1.1rem !important;
+}
+.cart__table td {
+  font-size: 0.9rem !important;
+}
 .addToCart__btn.delete__item-btn {
-  padding: 5px 15px;
+  padding: 7px 10px;
   font-size: 1rem !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.addToCart__btn.delete__item-btn:hover {
+  background-color: #ff0000;
 }
 @media only screen and (max-width: 576px) {
   .cart__table {
