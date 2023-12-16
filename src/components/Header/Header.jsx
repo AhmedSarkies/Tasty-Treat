@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
@@ -30,6 +30,7 @@ const navLinks = [
 ];
 
 const Header = () => {
+  const navigate = useNavigate();
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
@@ -77,9 +78,9 @@ const Header = () => {
     <header className="header" ref={headerRef}>
       <Container>
         <div className="nav__wrapper d-flex align-items-center justify-content-between w-100">
-          <div className="logo">
-            <img src={logo} alt="logo" />
-            <h5>Tasty Treat</h5>
+          <div className="logo header__logo">
+            <img src={logo} alt="logo" onClick={() => navigate("/home")} />
+            <h5 onClick={() => navigate("/home")}>Tasty Treat</h5>
           </div>
           {/* =========Menu========== */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
