@@ -5,17 +5,20 @@ import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
 
 import "./footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="footer">
       <Container>
         <Row className="g-3">
           <Col xl="3" lg="4" md="6" sm="12">
             <div className="logo footer__logo text-start">
-              <img src={logo} alt="logo" />
-              <h5 className="footer__title">Tasty Treat</h5>
+              <img src={logo} alt="logo" onClick={() => navigate("/home")} />
+              <h5 className="footer__title" onClick={() => navigate("/home")}>
+                Tasty Treat
+              </h5>
               <p>
                 lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor
                 sit amet, consectetur adip
