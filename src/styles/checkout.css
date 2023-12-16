@@ -1,0 +1,32 @@
+.shipping__address {
+  color: #212245;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.checkout__form {
+  background: transparent;
+  padding: 0;
+}
+.checkout__bill {
+  background-color: #fde4e4;
+  padding: 30px;
+  border-radius: 10px;
+}
+.checkout__total {
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+@media screen and (max-width: 992px) {
+  .checkout__form input,
+  .checkout__form textarea,
+  .checkout__form input::placeholder,
+  .checkout__form textarea::placeholder {
+    font-size: 1rem !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .addToCart__btn.payment__btn {
+    padding: 5px 15px;
+    font-size: 1rem;
+  }
+}
