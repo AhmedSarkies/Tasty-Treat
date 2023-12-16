@@ -16,6 +16,10 @@
   padding-top: 30px;
   border-top: 1px solid #ddd;
 }
+.addToCart__btn.payment__btn {
+  padding: 5px 15px;
+  font-size: 1rem;
+}
 @media screen and (max-width: 992px) {
   .checkout__form input,
   .checkout__form textarea,
