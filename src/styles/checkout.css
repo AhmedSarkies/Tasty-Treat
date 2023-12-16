@@ -23,10 +23,13 @@
   .checkout__form textarea::placeholder {
     font-size: 1rem !important;
   }
+  .addToCart__btn.payment__btn {
+    padding: 5px 15px;
+    font-size: 1rem;
+  }
 }
 @media only screen and (max-width: 768px) {
   .addToCart__btn.payment__btn {
-    padding: 5px 15px;
     font-size: 1rem;
   }
 }
