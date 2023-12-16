@@ -1,18 +1,25 @@
 .header {
   padding: 10px 0;
 }
-.logo {
+.logo.header__logo {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .logo img {
   width: calc(100% - 60%);
   object-fit: contain;
+  cursor: pointer;
 }
 .logo h5 {
   font-weight: 600;
   font-size: 1rem;
   color: #212245;
   margin-bottom: 0;
+  width: fit-content;
+  cursor: pointer;
 }
 .menu,
 .nav__right {
